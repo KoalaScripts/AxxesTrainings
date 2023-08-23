@@ -16,7 +16,7 @@
 		}
 	},
 
-	"postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"",
+	"postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"; pwsh -c 'install-module pester -force'; pwsh -c 'install-module sqlserver -force'; pwsh -c 'install-module importexcel -force'",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -35,13 +35,12 @@
 			"features": {
         		"github-cli": "latest"
     		}
-		},
-		"postCreateCommand": "pwsh -c 'install-module pester -force'; pwsh -c 'install-module sqlserver -force'; pwsh -c 'install-module importexcel -force'"
+		}
+		
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-	
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
