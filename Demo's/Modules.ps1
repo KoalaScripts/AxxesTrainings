@@ -21,8 +21,8 @@ Get-PSRepository
 
 # https://www.powershellgallery.com/
 # PowerShellGet
-Find-Module - Name Vmware.*
-Find-Module - Name Vmware.PowerCLI | Install-Module
+Find-Module -Name Vmware.*
+Find-Module -Name Vmware.PowerCLI | Install-Module
 
 # Making your own Modules to reuse your scripts 
 # .psm1 file 
