@@ -1,5 +1,4 @@
-﻿$CourseFolderPath= "C:\Traneeship2022"
-## MODULES
+﻿## MODULES
 # Install locations
 $Env:PSModulePath
 
@@ -31,7 +30,8 @@ Find-Module -Name Vmware.PowerCLI | Install-Module
 # New-ModuleManifest to autogenerate a psd1 template
 # See examples in folder \MyModule
 
-Import-Module -Name "$CourseFolderPath\MyModule\MyModule.psm1"
+Import-Module -Name "/MyModule/MyModule.psm1"
+Import-Module -Name "./Demo/MyModule/MyModule.psm1"
 #Command in action
 Count-words "This is a self made command that counts the words you typed"
 Get-Help Count-words
