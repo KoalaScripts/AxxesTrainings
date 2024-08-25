@@ -1,46 +1,19 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/powershell
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
-	"name": "PowerShell",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/powershell:lts-debian-11",
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": "true",
-			"username": "vscode",
-			"upgradePackages": "false",
-			"nonFreePackages": "true"
-		},
-		"ghcr.io/devcontainers/features/powershell:1": {
-			"version": "latest"
-		}
-	},
+	"name": ".NET Core 6.0, including pwsh (Ubuntu 18.04)",
+	"dockerFile": "Dockerfile",
 
-	"postCreateCommand": "sudo chsh vscode -s \"$(which pwsh)\"; pwsh -c 'install-module pester -force'; pwsh -c 'install-module sqlserver -force'; pwsh -c 'install-module importexcel -force'",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/PowerShell,type=bind",
+	"workspaceFolder": "/PowerShell",
 
-	// Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			// Set *default* container specific settings.json values on container create.
-			"settings": { 
-				"terminal.integrated.defaultProfile.linux": "pwsh"
-			},
-			
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				"ms-vscode.powershell",
-				"github.vscode-pull-request-github"
-			],
-			"features": {
-        		"github-cli": "latest"
-    		}
-		}
-		
-	}
+	// Uncomment the next line to run commands after the container is created.
+	"postCreateCommand": "cd src/powershell-unix && dotnet restore",
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	"extensions": [
+		"ms-azure-devops.azure-pipelines",
+		"ms-dotnettools.csharp",
+		"ms-vscode.powershell",
+		"DavidAnson.vscode-markdownlint",
+		"vitaliymaz.vscode-svg-previewer"
+	]
 }
