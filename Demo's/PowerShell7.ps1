@@ -39,5 +39,3 @@ Measure-Command {
 } | Select-Object Minutes,Seconds
 
 
-#The ability to use the PSReadline module for greater intelisence and help in the command line
-Install-Module PSReadLine -AllowPrerelease -Force
