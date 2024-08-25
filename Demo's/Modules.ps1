@@ -1,4 +1,5 @@
-﻿## MODULES
+﻿$CourseFolderPath= "C:\Traneeship2022"
+## MODULES
 # Install locations
 $Env:PSModulePath
 
@@ -20,8 +21,8 @@ Get-PSRepository
 
 # https://www.powershellgallery.com/
 # PowerShellGet
-Find-Module -Name Vmware.*
-Find-Module -Name Vmware.PowerCLI | Install-Module
+Find-Module - Name Vmware.*
+Find-Module - Name Vmware.PowerCLI | Install-Module
 
 # Making your own Modules to reuse your scripts 
 # .psm1 file 
@@ -30,8 +31,7 @@ Find-Module -Name Vmware.PowerCLI | Install-Module
 # New-ModuleManifest to autogenerate a psd1 template
 # See examples in folder \MyModule
 
-
-Import-Module -Name "./Demo/MyModule/MyModule.psm1"
+Import-Module -Name "$CourseFolderPath\MyModule\MyModule.psm1"
 #Command in action
 Count-words "This is a self made command that counts the words you typed"
 Get-Help Count-words
