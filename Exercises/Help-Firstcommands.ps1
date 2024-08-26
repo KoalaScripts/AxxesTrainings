@@ -1,7 +1,7 @@
 ﻿# Start by updating your local help 
 
 # Why does the command bellow not work? 
-Get-Childitem *.txt C:\ 
+Get-Childitem *.txt C:\ -Recurse
 
 # Find a command to get todays date
 
@@ -9,4 +9,4 @@ Get-Childitem *.txt C:\
 
 # Find a command to send out an email with 
 
-# With the information you found to send yourself an email Server info : smtp.office365.com Port 587 ssl is required
+# Get the StartInfo of Process Visual Studio Code
