@@ -5,7 +5,7 @@ Get-Childitem *.txt C:\
 
 # Find a command to get todays date
 
-# Find out how you can use powershell to get the day of the week from this date
+# Find out how you can use PowerShell to get the day of the week from this date
 
 # Find a command to send out an email with 
 
