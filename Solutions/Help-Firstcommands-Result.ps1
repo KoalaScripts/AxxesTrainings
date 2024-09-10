@@ -17,7 +17,7 @@ Get-Date | Get-Member
 
 Get-Command -name *Mail*
 
-# With the information you found to send yourself an email  gmail : username laboaxxes@gmail.com pwd: Powershell2022!  
+# With the information you found to send yourself an email
 
 Send-MailMessage -From xavier.clinquart@axxes.com -to xavierclinquart@outlook.com -subject "Hello email" -body "Welcome to Powershell" -SmtpServer smtp.office365.com -Credential (Get-credential) -UseSsl -port 587
 
